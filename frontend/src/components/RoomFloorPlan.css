@@ -1,0 +1,162 @@
+.room-floor-plan {
+  padding: 0.5rem 0;
+}
+
+/* ส่วนครอบแต่ละหอพัก */
+.apartment-section {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.apartment-title {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 1.15rem;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 0.75rem;
+}
+
+/* ปรับตารางห้องพักให้กว้างเท่ากัน (Fixed Grid) ดูเป็นระเบียบ */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.75rem;
+}
+
+/* การ์ดห้องพัก (ปรับเป็นสี่เหลี่ยมจัตุรัส คลีนๆ) */
+.room-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background: #ffffff;
+  aspect-ratio: 1 / 1; /* บังคับให้เป็นทรงจัตุรัสเท่ากันทุกห้อง */
+  position: relative;
+  overflow: hidden;
+}
+
+.room-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+/* หมายเลขห้อง */
+.room-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.25rem;
+}
+
+/* ปรับไอคอนจุดสถานะให้อยู่มุมขวาบน เพื่อความกระชับ */
+.room-status-dot {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* ชื่อผู้เช่าด้านล่าง */
+.room-tenant-name {
+  font-size: 0.75rem;
+  color: #64748b;
+  max-width: 100%;
+  font-weight: 500;
+}
+
+/* สไตล์สีตามสถานะห้อง (โทน Soft & Professional) */
+
+/* ว่าง */
+.room-card.room-empty {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+.room-card.room-empty .room-status-dot { background: #94a3b8; }
+
+/* มีผู้เช่า */
+.room-card.room-occupied {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.room-card.room-occupied .room-number { color: #166534; }
+.room-card.room-occupied .room-status-dot { background: #22c55e; }
+.room-card.room-occupied .room-tenant-name { color: #166534; }
+
+/* ค้างชำระ */
+.room-card.room-payment-issue {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+.room-card.room-payment-issue .room-number { color: #991b1b; }
+.room-card.room-payment-issue .room-status-dot { background: #ef4444; }
+.room-card.room-payment-issue .room-tenant-name { color: #991b1b; }
+
+/* แจ้งซ่อม */
+.room-card.room-maintenance {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+}
+.room-card.room-maintenance .room-number { color: #0369a1; }
+.room-card.room-maintenance .room-status-dot { background: #0ea5e9; }
+.room-card.room-maintenance .room-tenant-name { color: #0369a1; }
+
+
+/* คำอธิบายสถานะด้านล่าง (Legend) */
+.room-legend {
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc !important;
+}
+
+.room-legend h6 {
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.legend-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.legend-color-dot.empty { background: #94a3b8; }
+.legend-color-dot.occupied { background: #22c55e; }
+.legend-color-dot.payment-issue { background: #ef4444; }
+.legend-color-dot.maintenance { background: #0ea5e9; }
+
+/* Responsive */
+@media (max-width: 576px) {
+  .room-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 0.5rem;
+  }
+  .room-card {
+    padding: 0.5rem;
+  }
+  .room-number {
+    font-size: 0.95rem;
+  }
+  .room-tenant-name {
+    font-size: 0.65rem;
+  }
+}
