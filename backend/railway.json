@@ -4,8 +4,6 @@
     "builder": "nixpacks"
   },
   "deploy": {
-    "startCommand": "node server.js",
-    "restartPolicyType": "unless_stopped",
-    "restartPolicyMaxRetries": 10
+    "startCommand": "node server.js"
   }
 }
