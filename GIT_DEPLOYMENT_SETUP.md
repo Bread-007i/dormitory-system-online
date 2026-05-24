@@ -46,11 +46,11 @@ cd c:\dormitory-system-online
 # Initialize Git
 git init
 git add .
-git commit -m "Initial commit - ready for deployment"
+git commit -m "Initial commit - dormitory system online ready for deployment"
 git branch -M main
 
 # เพิ่ม GitHub remote
-git remote add origin https://github.com/YOUR_USERNAME/dormitory-system.git
+git remote add origin https://github.com/YOUR_USERNAME/dormitory-system-online.git
 git push -u origin main
 ```
 

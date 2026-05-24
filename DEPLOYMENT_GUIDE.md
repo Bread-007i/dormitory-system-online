@@ -14,9 +14,9 @@ Railway.app เหมาะสำหรับการ deploy ฟรี:
 # หากยังไม่ได้ push code ไป GitHub
 git init
 git add .
-git commit -m "Initial commit - ready for deployment"
+git commit -m "Initial commit - dormitory system online ready for deployment"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/dormitory-system.git
+git remote add origin https://github.com/YOUR_USERNAME/dormitory-system-online.git
 git push -u origin main
 ```
 
@@ -28,7 +28,7 @@ git push -u origin main
 ### 3. เพิ่ม Backend ไป Railway
 1. Click "+ New Project"
 2. Select "Deploy from GitHub repo"
-3. Select your dormitory-system repository
+3. Select your `dormitory-system-online` repository (online version)
 4. Railway จะ auto-detect Node.js project
 5. Click "Deploy"
 
@@ -87,12 +87,13 @@ Railway จะให้ connection string คุณ สามารถ:
 ### 1. Push Frontend ไป GitHub
 
 สร้าง repository สำหรับ frontend หรือใช้ subdirectory เดียวกัน
+(ใช้ `dormitory-system-online` repository)
 
 ### 2. Deploy ไป Vercel
 1. ไป https://vercel.com
 2. Sign up/Login ด้วย GitHub
 3. Click "New Project"
-4. Select repository
+4. Select `dormitory-system-online` repository
 5. Select "frontend" folder
 6. ตั้งค่า Environment Variables:
 
@@ -101,6 +102,8 @@ VITE_API_URL=https://your-railway-backend-url.railway.app
 ```
 
 ### 3. Vercel จะ Auto-Deploy เมื่อ Push ไป main branch
+
+(ทั้ง `dormitory-system-online` repository)
 
 ---
 

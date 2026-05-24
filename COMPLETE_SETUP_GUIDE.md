@@ -69,9 +69,9 @@ npm run dev
 # จาก root folder
 git init
 git add .
-git commit -m "Initial commit: Dormitory system ready for production"
+git commit -m "Initial commit: Dormitory system online - ready for production"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/dormitory-system.git
+git remote add origin https://github.com/YOUR_USERNAME/dormitory-system-online.git
 git push -u origin main
 ```
 
@@ -85,7 +85,7 @@ git push -u origin main
 **Deploy Backend:**
 1. Click "+ New Project"
 2. Select "Deploy from GitHub repo"
-3. เลือก `dormitory-system` repository
+3. เลือก `dormitory-system-online` repository (online version)
 4. Railway auto-detect Node.js
 
 **ตั้งค่า Database:**
@@ -136,7 +136,7 @@ mysql -h <railway-host> -u root -p<password> railway < database-schema.sql
 
 **Deploy Frontend:**
 1. Click "New Project"
-2. เลือก GitHub repository
+2. เลือก GitHub repository `dormitory-system-online` (online version)
 3. Select "frontend" folder
 4. Framework: "Vite"
 

@@ -22,9 +22,9 @@ cd c:\dormitory-system-online
 # ถ้ายังไม่มี GitHub repo:
 git init
 git add .
-git commit -m "Initial: dormitory system"
+git commit -m "Initial: dormitory system - online version"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/dormitory-system.git
+git remote add origin https://github.com/YOUR_USERNAME/dormitory-system-online.git
 git push -u origin main
 
 # ถ้ามี repo แล้ว:
@@ -39,7 +39,7 @@ git push origin main
 2. Sign up / Login with GitHub
 3. "+ New Project"
 4. "Deploy from GitHub repo"
-5. เลือก dormitory-system
+5. เลือก **dormitory-system-online** (online version)
 6. Wait 2-3 minutes...
 7. Back → "+ Add" → MySQL
 
@@ -61,7 +61,7 @@ echo VITE_API_URL=https://your-project.railway.app/api > .env.local
 1. ไป https://vercel.com
 2. Sign up / Login with GitHub
 3. "New Project"
-4. Select dormitory-system repo
+4. Select **dormitory-system-online** repo (online version)
 5. Select "frontend" folder
 6. Environment: VITE_API_URL
 7. Deploy!
